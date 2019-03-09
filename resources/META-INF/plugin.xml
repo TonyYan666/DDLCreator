@@ -1,0 +1,43 @@
+<idea-plugin>
+  <id>org.tonyyan.plugin.ddlcreator</id>
+  <name>DDLCreator</name>
+  <version>1.2</version>
+  <vendor email="308001970@qq.com" url="https://me.csdn.net/tony308001970">TONYYAN</vendor>
+
+  <description><![CDATA[
+      通过JPA Entity 生成数据库 建表DDL语句
+    ]]></description>
+
+  <change-notes><![CDATA[
+
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="org.tonyyan.plugin.ddlcreator.CreateTableDDL" class="org.tonyyan.plugin.ddlcreator.CreateTableDDL" text="CreateTable DDL"
+            description="Create Table DDL" popup="false">
+      <!--<keyboard-shortcut keymap="$default" first-keystroke="shift alt C"/>-->
+      <add-to-group group-id="GenerateGroup" anchor="last"/>
+    </action>
+    <action id="org.tonyyan.plugin.ddlcreator.AddColumnDDL"
+            class="org.tonyyan.plugin.ddlcreator.AddColumnDDL" text="AddColumn DDL"
+            description="Create Add Column DDL by JPA entity">
+      <add-to-group group-id="GenerateGroup" anchor="last"/>
+    </action>
+  </actions>
+
+</idea-plugin>
